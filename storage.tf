@@ -12,7 +12,7 @@ resource "aws_db_instance" "registration" {
     allocated_storage      = 5
     engine                 = "postgres"
     engine_version         = "16.1"
-    username               = "edu"
+    username               = "ecom_user"
     password               = random_string.db-password.result
     publicly_accessible    = true
     skip_final_snapshot    = true
