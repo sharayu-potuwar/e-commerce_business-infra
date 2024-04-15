@@ -13,7 +13,8 @@ resource "aws_db_instance" "registration" {
     engine                 = "postgres"
     engine_version         = "16.1"
     username               = "ecom_user"
-    password               = random_string.db-password.result
+    password               = var.db_password
     publicly_accessible    = true
     skip_final_snapshot    = true
 }
+
