@@ -11,7 +11,7 @@ resource "aws_db_instance" "registration" {
     instance_class         = "db.t3.micro"
     allocated_storage      = 5
     engine                 = "postgres"
-    engine_version         = "14.1"
+    engine_version         = "16.1"
     username               = "edu"
     password               = random_string.db-password.result
     publicly_accessible    = true
