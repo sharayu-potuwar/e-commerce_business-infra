@@ -9,14 +9,12 @@ resource "aws_ecr_repository" "repo" {
 
 data "aws_iam_policy_document" "policy_doc" {
   statement {
-    sid    = "policy v1"
+    sid    = "allowecs"
     effect = "Allow"
-
     principals {
         type = "service"
         identifiers = ["ecs.amazonaws.com"]
     }
-
     actions = [
       "ecr:BatchGetImage",
       "ecr:PutImage",
@@ -26,7 +24,7 @@ data "aws_iam_policy_document" "policy_doc" {
       "ecr:DeleteRepository",
       "ecr:BatchDeleteImage",
       "ecr:SetRepositoryPolicy",
-      "ecr:DeleteRepositoryPolicy",
+      "ecr:DeleteRepositoryPolicy"
     ]
   }
 }
