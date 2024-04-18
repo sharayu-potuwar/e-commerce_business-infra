@@ -13,8 +13,8 @@ data "aws_iam_policy_document" "policy_doc" {
     effect = "Allow"
 
     principals {
-      type        = "AWS"
-      identifiers = ["123456789012"]
+        type = "service"
+        identifiers = ["ecs.amazonaws.com"]
     }
 
     actions = [
