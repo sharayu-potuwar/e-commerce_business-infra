@@ -10,11 +10,10 @@ resource "aws_ecs_task_definition" "e-comm_ecs_task" {
    name        = "ecom_container"
    image       = "ecom_app:latest"
    essential   = true
-   environment = "Production"
    portMappings = [{
      protocol      = "tcp"
-     containerPort = "8001"
-     hostPort      = "8001"
+     containerPort = 8001
+     hostPort      = 8001
   }]
 }])
 }
