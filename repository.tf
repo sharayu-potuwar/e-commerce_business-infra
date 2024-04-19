@@ -19,15 +19,6 @@ data "aws_iam_policy_document" "policy_doc" {
         "ecr:ReplicateImage",
         "ecr:CreateRepository",
         "ecr:BatchImportUpstreamImage"
-    #   "ecr:BatchGetImage",
-    #   "ecr:PutImage",
-    #   "ecr:DescribeRepositories",
-    #   "ecr:GetRepositoryPolicy",
-    #   "ecr:ListImages",
-    #   "ecr:DeleteRepository",
-    #   "ecr:BatchDeleteImage",
-    #   "ecr:SetRepositoryPolicy",
-    #   "ecr:DeleteRepositoryPolicy"
     ]
   }
 }
