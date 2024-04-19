@@ -16,9 +16,12 @@ data "aws_iam_policy_document" "policy_doc" {
         identifiers = ["ecs.amazonaws.com"]
     }
     actions = [
-        "ecr:ReplicateImage",
-        "ecr:CreateRepository",
-        "ecr:BatchImportUpstreamImage"
+        "ecr:BatchGetImage",
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:GetAuthorizationToken"
+    ]
+    resources = [
+        "arn:aws:ecr:::*"
     ]
   }
 }
