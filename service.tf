@@ -9,8 +9,8 @@ resource "aws_ecs_service" "main" {
     scheduling_strategy                = "REPLICA"
 
     network_configuration {
-        security_groups  = "sg-0070f32bfa40490c2"
-        subnets          = "subnet-005a5c83ac0837b4f"
+        security_groups  = ["sg-0070f32bfa40490c2"]
+        subnets          = ["subnet-005a5c83ac0837b4f","subnet-0e82b9017f47c921a"]
         assign_public_ip = true
     }
 
