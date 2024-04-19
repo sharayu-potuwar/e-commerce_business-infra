@@ -16,15 +16,18 @@ data "aws_iam_policy_document" "policy_doc" {
         identifiers = ["ecs.amazonaws.com"]
     }
     actions = [
-      "ecr:BatchGetImage",
-      "ecr:PutImage",
-      "ecr:DescribeRepositories",
-      "ecr:GetRepositoryPolicy",
-      "ecr:ListImages",
-      "ecr:DeleteRepository",
-      "ecr:BatchDeleteImage",
-      "ecr:SetRepositoryPolicy",
-      "ecr:DeleteRepositoryPolicy"
+        "ecr:ReplicateImage",
+        "ecr:CreateRepository",
+        "ecr:BatchImportUpstreamImage"
+    #   "ecr:BatchGetImage",
+    #   "ecr:PutImage",
+    #   "ecr:DescribeRepositories",
+    #   "ecr:GetRepositoryPolicy",
+    #   "ecr:ListImages",
+    #   "ecr:DeleteRepository",
+    #   "ecr:BatchDeleteImage",
+    #   "ecr:SetRepositoryPolicy",
+    #   "ecr:DeleteRepositoryPolicy"
     ]
   }
 }
