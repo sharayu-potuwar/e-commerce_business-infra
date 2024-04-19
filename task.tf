@@ -1,6 +1,6 @@
 resource "aws_ecs_task_definition" "e-comm_ecs_task" {
   family = "service"
-#   network_mode             = "awsvpc"
+  network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
   cpu                      = 256
   memory                   = 512
