@@ -30,11 +30,11 @@ resource "aws_iam_role_policy_attachment" "ecs-task-execution-role-policy-attach
 #   })
 # }
 
-resource "aws_ecr_repository_policy" "example" {
+resource "aws_ecr_repository_policy" "policy" {
   repository = aws_ecr_repository.ecom_repo.name
-  policy = aws_ecr_lifecycle_policy.ecom_repo_policy.policy
-  depends_on = [ aws_iam_role.ecs_task_execution_role  ]     
-  }
+  policy = aws_iam_role.ecs_task_execution_role.name
+  
+}
 
 
 
