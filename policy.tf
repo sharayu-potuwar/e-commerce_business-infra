@@ -30,7 +30,7 @@ resource "aws_iam_policy" "ecr-policy" {
                 "ecr:UploadLayerPart"
         ]
         Effect   = "Allow"
-        Resource = "*"
+        Resource = "arn:aws:ecr:us-east-1:211125373436:repository/ecom_repo"
       },
       {
             "Action": "ecr:GetAuthorizationToken",
