@@ -1,7 +1,7 @@
 # Create a new load balancer
 resource "aws_elb" "ecom_elb" {
   name               = "aws-terraform-elb"
-  availability_zones = ["us-east-1"]
+  availability_zones = [ "us-east-1a", "us-east-1b", "us-east-1c" ]
 
   listener {
     instance_port     = 8000
