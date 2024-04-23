@@ -16,7 +16,7 @@ resource "aws_ecs_service" "main" {
     
     load_balancer {
     elb_name = aws_elb.ecom_elb.name
-    target_group_arn = aws_lb_target_group.ecom_target.arn
+    # target_group_arn = aws_lb_target_group.ecom_target.arn
     container_name   = "ecom_container"
     container_port   = 8001
     }
