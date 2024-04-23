@@ -13,6 +13,12 @@ resource "aws_ecs_service" "main" {
         subnets          = ["subnet-005a5c83ac0837b4f","subnet-0e82b9017f47c921a"]
         assign_public_ip = true
     }
+    
+    load_balancer {
+    elb_name = aws_elb.ecom_elb.name
+    container_name   = "ecom_container"
+    container_port   = 8001
+    }
 
     lifecycle {
         ignore_changes = [task_definition, desired_count]
