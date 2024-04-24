@@ -9,3 +9,12 @@ resource "aws_lb" "ecom_lb" {
     Environment = "staging"
   }
 }
+
+resource "aws_lb_target_group" "ecom_ip-tg" {
+  name        = "ecom-lb-tg"
+  port        = 8001
+  protocol    = "HTTP"
+  target_type = "ip"
+  vpc_id      = "vpc-05b1ca67a2465043e"
+}
+
