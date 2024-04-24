@@ -18,3 +18,14 @@ resource "aws_lb_target_group" "ecom_ip-tg" {
   vpc_id      = "vpc-05b1ca67a2465043e"
 }
 
+resource "aws_lb_listener" "econ_listener" {
+  load_balancer_arn = aws_lb.ecom_lb.arn
+  port              = "80"
+  protocol          = "HTTP"
+  
+
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.ecom_ip-tg.arn
+  }
+}
