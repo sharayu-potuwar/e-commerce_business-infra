@@ -14,6 +14,12 @@ resource "aws_ecs_service" "main" {
         assign_public_ip = true
     }
 
+    load_balancer {
+    target_group_arn = aws_lb_target_group.ecom_ip-tg.arn
+    container_name   = "ecom_container"
+    container_port   = 8001
+    }
+
     lifecycle {
         ignore_changes = [task_definition, desired_count]
     }
