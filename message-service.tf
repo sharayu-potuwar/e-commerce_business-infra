@@ -47,3 +47,10 @@ data "aws_iam_policy_document" "sns_topic_policy" {
     sid = "__default_statement_ID"
   }
 }
+
+resource "aws_sns_topic_subscription" "user_updates_email_target" {
+  topic_arn = "arn:aws:sns:us-east-1:211125373436:ecom-user-updates-topic"
+  protocol  = "email"
+  endpoint = "sharayu.potuwar@gmail.com"
+  
+}
