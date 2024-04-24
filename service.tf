@@ -13,7 +13,7 @@ resource "aws_ecs_service" "main" {
         subnets          = ["subnet-005a5c83ac0837b4f","subnet-0e82b9017f47c921a"]
         assign_public_ip = true
     }
-    
+
     lifecycle {
         ignore_changes = [task_definition, desired_count]
     }
