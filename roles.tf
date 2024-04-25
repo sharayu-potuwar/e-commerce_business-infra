@@ -15,10 +15,6 @@ resource "aws_iam_role" "ecs_task_role" {
  ]
 } 
 EOF
-  inline_policy {
-    name   = "sns-inline-policy"
-    policy = data.aws_iam_policy_document.sns_topic_policy.json
-  }
 }
 
 resource "aws_iam_role" "ecs_task_execution_role" {
