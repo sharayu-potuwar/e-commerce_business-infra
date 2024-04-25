@@ -54,7 +54,7 @@ resource "aws_iam_policy" "secret-policy" {
 
 
 
-resource "aws_iam_role_policy_attachment" "ecs-task-sns-role-policy-attachment" {
+resource "aws_iam_role_policy_attachment" "ecs-task-role-policy-attachment" {
   role      = aws_iam_role.ecs_task_role.name
   policy_arn = aws_iam_policy.sns-policy.arn
 }
