@@ -46,5 +46,13 @@ resource "aws_ecs_task_definition" "e-comm_ecs_task" {
      containerPort = 8001
      hostPort      = 8001
   }]
+   "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group":"ecom_watch_gp",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecomm"
+                }
+            }
 }])
 }
