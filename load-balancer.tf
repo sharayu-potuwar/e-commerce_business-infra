@@ -1,5 +1,5 @@
 resource "aws_lb" "ecom_lb" {
-  name               = "${var.env}_ecom-lb"
+  name               = "${var.env}-ecom-lb"
   internal           = false
   load_balancer_type = "application"
   security_groups    = ["sg-0070f32bfa40490c2"]

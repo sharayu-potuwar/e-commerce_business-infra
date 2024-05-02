@@ -7,7 +7,7 @@ resource "random_string" "db-password" {
 
 
 resource "aws_db_instance" "registration" {
-    identifier             = "${var.env}_e-commerce"
+    identifier             = "${var.env}-e-commerce"
     instance_class         = "db.t3.micro"
     allocated_storage      = 5
     engine                 = "postgres"
