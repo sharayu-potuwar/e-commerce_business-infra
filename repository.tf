@@ -1,5 +1,5 @@
 resource "aws_ecr_repository" "ecom_repo" {
-  name = "${var.env}_ecom_repo"          # Name of the repository
+  name = "ecom_repo"          # Name of the repository
   image_tag_mutability = "MUTABLE"
   image_scanning_configuration {
     scan_on_push = true
