@@ -1,5 +1,5 @@
 resource "aws_sns_topic" "ecom-sns" {
-  name = "ecom-user-updates-topic"
+  name = "${var.env}_ecom-user-updates-topic"
 }
 
 resource "aws_sns_topic_policy" "default" {
