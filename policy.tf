@@ -1,5 +1,5 @@
 resource "aws_iam_policy" "ecr-policy" {
-  name        = "ecr_policy"
+  name        = "${var.env}_ecr_policy"
   path        = "/"
   description = "My ecr policy"
   policy = jsonencode({
@@ -19,7 +19,7 @@ resource "aws_iam_policy" "ecr-policy" {
 }
 
 resource "aws_iam_policy" "sns-policy" {
-  name        = "sns_policy"
+  name        = "${var.env}_sns_policy"
   path        = "/"
   description = "My sns policy"
   policy = jsonencode({
@@ -37,7 +37,7 @@ resource "aws_iam_policy" "sns-policy" {
 }
 
 resource "aws_iam_policy" "secret-policy" {
-  name        = "secret_policy"
+  name        = "${var.env}_secret_policy"
   path        = "/"
   description = "My secret policy"
   policy = jsonencode({
@@ -53,7 +53,7 @@ resource "aws_iam_policy" "secret-policy" {
 }
 
 resource "aws_iam_policy" "cloudwatch-policy" {
-  name        = "cloudwatch_policy"
+  name        = "${var.env}_cloudwatch_policy"
   path        = "/"
   description = "My cloudwatch policy"
   policy = jsonencode({

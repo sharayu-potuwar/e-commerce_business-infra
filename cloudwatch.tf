@@ -1,5 +1,5 @@
 resource "aws_cloudwatch_log_group" "ecom_watch_gp" {
-  name = "ecom_watch_gp"
+  name = "${var.env}_ecom_watch_gp"
 
   tags = {
     Environment = "staging"
@@ -8,6 +8,6 @@ resource "aws_cloudwatch_log_group" "ecom_watch_gp" {
 }
 
 resource "aws_cloudwatch_log_stream" "ecom_stream" {
-  name           = "EcomLogStream"
+  name           = "${var.env}_EcomLogStream"
   log_group_name = aws_cloudwatch_log_group.ecom_watch_gp.name
 }

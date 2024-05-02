@@ -1,9 +1,9 @@
 resource "aws_ecs_cluster" "main" {
-  name = "e-comm_cluster"
+  name = "${var.env}_e-comm_cluster"
 }
 
 resource "aws_ecs_service" "main" {
-    name                               = "e-comm_ecs_service"
+    name                               = "${var.env}_e-comm_ecs_service"
     cluster                            = aws_ecs_cluster.main.id
     task_definition                    = aws_ecs_task_definition.e-comm_ecs_task.arn
     desired_count                      = 2
