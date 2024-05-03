@@ -9,8 +9,7 @@ resource "aws_ecr_repository" "ecom_repo" {
 
 
 resource "aws_ecr_lifecycle_policy" "ecom_repo_policy" {
-  count = try(var.env ? "dev" : 1, 0)
-  repository = aws_ecr_repository.ecom_repo.name
+  repository = aws_ecr_repository.ecom_repo[0].name
   policy = jsonencode({
    rules = [{
      rulePriority = 1
