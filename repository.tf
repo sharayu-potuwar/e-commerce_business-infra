@@ -1,5 +1,5 @@
 resource "aws_ecr_repository" "ecom_repo" {
-  count = try(var.env ? "dev" : 1, 0)
+  count = try(var.env == "dev" ?  1 : 0)
   name = "ecom_repo"          # Name of the repository
   image_tag_mutability = "MUTABLE"
   image_scanning_configuration {
