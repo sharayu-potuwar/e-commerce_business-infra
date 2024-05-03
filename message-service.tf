@@ -49,7 +49,8 @@ data "aws_iam_policy_document" "sns_topic_policy" {
 }
 
 resource "aws_sns_topic_subscription" "user_updates_email_target" {
-  topic_arn = "arn:aws:sns:us-east-1:211125373436:ecom-user-updates-topic"
+  # topic_arn = "arn:aws:sns:us-east-1:211125373436:ecom-user-updates-topic"
+  topic_arn = aws_sns_topic.ecom-sns.arn
   protocol  = "email"
   endpoint = "sharayu.potuwar@gmail.com"
   
