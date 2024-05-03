@@ -11,7 +11,7 @@ resource "aws_lb" "ecom_lb" {
 }
 
 resource "aws_lb_target_group" "ecom_ip-tg" {
-  name        = "ecom-lb-tg"
+  name        = "${var.env}-ecom-lb-tg"
   port        = 8001
   protocol    = "HTTP"
   target_type = "ip"
