@@ -33,6 +33,6 @@ resource "aws_lb_listener" "ecom_listener" {
 
   default_action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.ecom_ip-tg.arn
+    target_group_arn = aws_lb_target_group.ecom_ip-tg-blue.arn
   }
 }
