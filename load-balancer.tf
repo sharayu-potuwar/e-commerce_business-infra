@@ -10,9 +10,17 @@ resource "aws_lb" "ecom_lb" {
   }
 }
 
-resource "aws_lb_target_group" "ecom_ip-tg" {
-  name        = "${var.env}-ecom-lb-tg"
+resource "aws_lb_target_group" "ecom_ip-tg-blue" {
+  name        = "${var.env}-ecom-tg-blue"
   port        = 8001
+  protocol    = "HTTP"
+  target_type = "ip"
+  vpc_id      = "vpc-05b1ca67a2465043e"
+}
+
+resource "aws_lb_target_group" "ecom_ip-tg-green" {
+  name        = "${var.env}-ecom-tg-green"
+  port        = 8002
   protocol    = "HTTP"
   target_type = "ip"
   vpc_id      = "vpc-05b1ca67a2465043e"
