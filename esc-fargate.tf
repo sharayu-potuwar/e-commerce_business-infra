@@ -53,7 +53,7 @@ resource "aws_ecs_task_definition" "e-comm_ecs_task" {
    "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group":"ecom_watch_gp",
+                    "awslogs-group": "${aws_cloudwatch_log_group.ecom_watch_gp.name}",
                     "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecomm"
                 }
