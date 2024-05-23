@@ -51,7 +51,7 @@ resource "aws_ecs_task_definition" "e-comm_ecs_task" {
                 "options": {
                     "awslogs-group": "${aws_cloudwatch_log_group.ecom_watch_gp.name}",
                     "awslogs-region": "us-east-1",
-                    "awslogs-stream-prefix": "ecomm"
+                    "awslogs-stream-prefix": "${aws_cloudwatch_log_stream.ecom_stream.name}"
                 }
             }
 }])
