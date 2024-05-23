@@ -19,7 +19,7 @@ resource "aws_ecs_service" "main" {
     }
 
     load_balancer {
-    target_group_arn = aws_lb_target_group.ecom_ip-tg-blue.arn
+    target_group_arn = aws_lb_target_group.ecom_ip-tg.arn
     container_name   = "ecom_container"
     container_port   = 8001
     }
