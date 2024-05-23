@@ -27,10 +27,6 @@ resource "aws_ecs_service" "main" {
     lifecycle {
         ignore_changes = [task_definition, desired_count]
     }
-
-    deployment_controller {
-      type = "CODE_DEPLOY"
-    }
 }
 
 resource "aws_ecs_task_definition" "e-comm_ecs_task" {
