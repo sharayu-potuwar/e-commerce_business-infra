@@ -44,7 +44,7 @@ resource "aws_iam_policy" "secret-policy" {
     Version = "2012-10-17"
     Statement = [
       { 
-        Action   = ["secretsmanager:GetSecretValue"]
+        Action   = ["secretsmanager:GetSecretValue","kms:Encrypt","kms:Decrypt"]
         Effect   = "Allow"
         Resource= "*"
       }
