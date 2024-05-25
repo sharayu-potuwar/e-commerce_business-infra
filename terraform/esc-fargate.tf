@@ -10,24 +10,33 @@ resource "aws_ecs_task_definition" "ecom_ecs_task" {
     memory                   = 512
     execution_role_arn       = aws_iam_role.ecs_task_execution_role.arn
     task_role_arn            = aws_iam_role.ecs_task_role.arn
-    container_definitions = jsonencode([{
-    name        = "ecom_container"
-    image       = "${var.app_image}"
-    essential   = true
-    portMappings = [{
-        protocol      = "tcp"
-        containerPort = 8001
-        hostPort      = 8001
-    }]
-    "logConfiguration": {
-                "logDriver": "awslogs",
-                "options": {
-                    "awslogs-group": "${aws_cloudwatch_log_group.ecom_watch_gp.name}",
-                    "awslogs-region": "us-east-1",
-                    "awslogs-stream-prefix": "${aws_cloudwatch_log_stream.ecom_stream.name}"
+    container_definitions = jsonencode([
+        {
+            name        = "ecom_container"
+            image       = "${var.app_image}"
+            essential   = true
+            portMappings = [{
+                protocol      = "tcp"
+                containerPort = 8001
+                hostPort      = 8001
+            }
+            ]
+            environment = [
+                {
+                    name = "ENV_CONFIG",
+                    value = "${var.env}"
+                }
+            ]
+            logConfiguration = {
+                logDriver = "awslogs"
+                options = {
+                    awslogs-group         = "${aws_cloudwatch_log_group.ecom_watch_gp.name}"
+                    awslogs-region        = "us-east-1"
+                    awslogs-stream-prefix = "${aws_cloudwatch_log_stream.ecom_stream.name}"
                 }
             }
-}])
+        }]
+    )
 }
 
 
