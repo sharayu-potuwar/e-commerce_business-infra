@@ -8,6 +8,7 @@ resource "aws_ecr_repository" "ecom_repo" {
 }
 
 
+
 # # resource "aws_ecr_lifecycle_policy" "ecom_repo_policy" {
 # #   repository = aws_ecr_repository.ecom_repo[0].name
 # #   policy = jsonencode({
