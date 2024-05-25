@@ -1,11 +1,11 @@
-# resource "aws_ecr_repository" "ecom_repo" {
-#   count = try(var.env == "dev" ?  1 : 0)
-#   name = "ecom_repo"          # Name of the repository
-#   image_tag_mutability = "MUTABLE"
-#   image_scanning_configuration {
-#     scan_on_push = true
-#   }
-# }
+resource "aws_ecr_repository" "ecom_repo" {
+  count = try(var.env == "dev" ?  1 : 0)
+  name = "ecom_repo"          # Name of the repository
+  image_tag_mutability = "MUTABLE"
+  image_scanning_configuration {
+    scan_on_push = true
+  }
+}
 
 
 # # resource "aws_ecr_lifecycle_policy" "ecom_repo_policy" {
