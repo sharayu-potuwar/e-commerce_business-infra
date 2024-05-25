@@ -1,5 +1,5 @@
 resource "aws_cloudwatch_log_group" "ecom_watch_gp" {
-  name = "${var.env}_ecom_watch_gp"
+  name = "ecom_watch_gp"
   tags = {
     Application = "ecom"
   }
