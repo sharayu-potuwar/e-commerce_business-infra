@@ -20,5 +20,5 @@ resource "aws_cloudwatch_log_group" "ecom_build_gp" {
 resource "aws_cloudwatch_log_stream" "ecom_build_stream" {
     count = try(var.env == "dev" ?  1 : 0)
     name           = "ecom_build_log_stream"
-    log_group_name = aws_cloudwatch_log_group.ecom_build_gp.name
+    log_group_name = aws_cloudwatch_log_group.ecom_build_gp[0].name
 }
