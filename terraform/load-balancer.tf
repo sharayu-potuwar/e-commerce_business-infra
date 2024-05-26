@@ -10,7 +10,7 @@ resource "aws_lb" "ecom_lb" {
   }
 }
 
-resource "aws_lb_target_group" "ecom_ip-tg-blue" {
+resource "aws_lb_target_group" "ecom_lb_tg_blue" {
   name        = "${var.env}-ecom-tg-blue"
   port        = 8001
   protocol    = "HTTP"
@@ -18,7 +18,7 @@ resource "aws_lb_target_group" "ecom_ip-tg-blue" {
   vpc_id      = "vpc-05b1ca67a2465043e"
 }
 
-resource "aws_lb_target_group" "ecom_ip-tg-green" {
+resource "aws_lb_target_group" "ecom_lb_tg_green" {
   name        = "${var.env}-ecom-tg-green"
   port        = 8001
   protocol    = "HTTP"
@@ -41,6 +41,6 @@ resource "aws_lb_listener" "ecom_listener" {
   protocol          = "HTTP"
   default_action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.ecom_ip-tg-blue.arn
+    target_group_arn = aws_lb_target_group.ecom_lb_tg_blue.arn
   }
 }
