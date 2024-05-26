@@ -35,7 +35,7 @@ resource "aws_lb_target_group" "ecom_lb_tg_green" {
 # }
 
 
-resource "aws_lb_listener" "ecom_listener" {
+resource "aws_lb_listener" "ecom_listener_bg" {
   load_balancer_arn = aws_lb.ecom_lb.arn
   port              = "80"
   protocol          = "HTTP"
