@@ -66,8 +66,8 @@ resource "aws_ecs_service" "ecom_service" {
         ignore_changes = [task_definition, desired_count]
     }
     
-    deployment_controller {
-      type = "CODE_DEPLOY"
-    }
+    # deployment_controller {
+    #   type = "CODE_DEPLOY"
+    # }
 }
 
