@@ -1,3 +1,5 @@
+#region ECS Roles
+
 resource "aws_iam_role" "ecs_task_role" {
     name = "${var.env}_ecom_ecs_task_role"
     assume_role_policy = <<EOF
@@ -36,6 +38,7 @@ resource "aws_iam_role" "ecs_task_execution_role" {
     EOF
 }
 
+#endregion
 data "aws_iam_policy_document" "assume_role" {
   statement {
     effect = "Allow"
@@ -64,9 +67,10 @@ data "aws_iam_policy_document" "lambda_logging" {
       "logs:CreateLogGroup",
       "logs:CreateLogStream",
       "logs:PutLogEvents",
+      "sns:GetTopicAttributes"
     ]
 
-    resources = ["arn:aws:logs:*:*:*:*"]
+    resources = ["arn:aws:logs:*:*:*:*","arn:aws:sns:*:*:*"]
   }
 }
 
