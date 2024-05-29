@@ -14,3 +14,7 @@ variable "secret_key" {
 variable "app_image" {
   type = string
 }
+
+variable "lambda_function_name" {
+  default = "e-commerce_business-campaign-service"
+}
