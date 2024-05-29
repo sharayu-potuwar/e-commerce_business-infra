@@ -51,6 +51,6 @@ resource "aws_sns_topic_policy" "default" {
 
 resource "aws_sns_topic_subscription" "user_updates_email_target" {
   topic_arn = aws_sns_topic.ecom-sns.arn
-  protocol  = "email"
-  endpoint = "sharayu.potuwar@gmail.com"
+  protocol  = "lambda"
+  endpoint = aws_lambda_function.ecom_lambda.arn
 }

@@ -18,4 +18,7 @@ resource "aws_db_instance" "registration" {
     skip_final_snapshot    = true
 }
 
+resource "aws_s3_bucket" "ecom_bucket" {
+  bucket = "ecom-email-sourcecode-bucket"
+}
 
