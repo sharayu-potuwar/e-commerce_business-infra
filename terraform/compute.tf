@@ -14,7 +14,7 @@ resource "aws_lambda_function" "ecom_lambda" {
 
     depends_on = [
     aws_iam_role_policy_attachment.lambda_logs,
-    aws_cloudwatch_log_group.ecom_watch_gp,
+    aws_cloudwatch_log_group.lambda_watch_gp,
   ]
 }
 
