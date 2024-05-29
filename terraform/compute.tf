@@ -9,7 +9,7 @@ resource "aws_lambda_function" "ecom_lambda" {
     s3_object_version = data.aws_s3_object.bucketreference.version_id
     function_name     = "e-commerce_business-campaign-service"
     role              = aws_iam_role.iam_for_lambda.arn # (not shown)
-    handler           = "welcome-mail.lambda_handler"
+    handler           = "campaign_service/welcome-mail.lambda_handler"
     runtime           = "python3.9"
 
     depends_on = [
