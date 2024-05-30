@@ -21,5 +21,5 @@
 # }
 
 resource "aws_ses_email_identity" "example" {
-  email = "saharayu.potuwar@gmail.com"
+  email = "sharayu.potuwar@gmail.com"
 }
