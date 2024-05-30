@@ -67,10 +67,11 @@ data "aws_iam_policy_document" "lambda_logging" {
       "logs:CreateLogGroup",
       "logs:CreateLogStream",
       "logs:PutLogEvents",
-      "sns:GetTopicAttributes"
+      "sns:GetTopicAttributes",
+      "ses:*"
     ]
 
-    resources = ["arn:aws:logs:*:*:*:*","arn:aws:sns:*:*:*"]
+    resources = ["arn:aws:logs:*:*:*:*","arn:aws:sns:*:*:*","arn:aws:ses:*:*:*"]
   }
 }
 
