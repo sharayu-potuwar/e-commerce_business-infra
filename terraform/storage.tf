@@ -19,6 +19,7 @@ resource "aws_db_instance" "registration" {
 }
 
 resource "aws_s3_bucket" "ecom_bucket" {
+  count = try(var.env == "dev" ?  1 : 0)
   bucket = "ecom-email-sourcecode-bucket"
 }
 
