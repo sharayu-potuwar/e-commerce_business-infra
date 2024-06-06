@@ -1,7 +1,8 @@
-data "aws_s3_object" "bucketreference" {
-  bucket = "ecom-email-sourcecode-bucket"
-  key    = "campaign_service.zip"
-}
+#uncomment the code while running
+# data "aws_s3_object" "bucketreference" {
+#   bucket = "ecom-email-sourcecode-bucket"
+#   key    = "campaign_service.zip"
+# }
 
 #uncomment the code while running
 # resource "aws_lambda_function" "ecom_lambda" {
