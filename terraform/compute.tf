@@ -18,6 +18,7 @@ resource "aws_lambda_function" "ecom_lambda" {
   ]
 }
 
+#uncomment the code while running
 #Allow execution from SNS to lambda
 # resource "aws_lambda_permission" "with_sns" {
 #   statement_id  = "AllowExecutionFromSNS"

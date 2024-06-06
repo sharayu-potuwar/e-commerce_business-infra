@@ -48,9 +48,9 @@ resource "aws_sns_topic_policy" "default" {
   policy = data.aws_iam_policy_document.sns_topic_policy.json
 }
 
-
-resource "aws_sns_topic_subscription" "user_updates_email_target" {
-  topic_arn = aws_sns_topic.ecom-sns.arn
-  protocol  = "lambda"
-  endpoint = aws_lambda_function.ecom_lambda.arn
-}
+##uncomment the code while running
+# resource "aws_sns_topic_subscription" "user_updates_email_target" {
+#   topic_arn = aws_sns_topic.ecom-sns.arn
+#   protocol  = "lambda"
+#   endpoint = aws_lambda_function.ecom_lambda.arn
+# }
